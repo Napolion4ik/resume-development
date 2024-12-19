@@ -1,0 +1,29 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin hoverAnim {
+    transition: all 0.3s linear;
+    &:hover {
+        color: var(--hover-color);
+    }
+}
+
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #2d2e32;
+    --white-color: #fff;
+    --sub-color: #767676;
+    --hover-color: #147EFB;
+}
+
+
+body.dark {
+    --bg-color: #2d2e32;
+    --text-color: #f9f9f9;
+    --white-color: #070606;
+    --sub-color: #767676;
+    
+}
+

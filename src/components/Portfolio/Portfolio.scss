@@ -1,0 +1,139 @@
+.portfolio {
+  padding: 80px 0px;
+  &__item {
+    padding: 30px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    display: flex;
+    height: 400px;
+    margin-bottom: 50px;
+  }
+  &__view_disere:hover {
+      transform: translateY(-1596px);
+  }
+  &__view_pizza:hover {
+      transform: translateY(-321px);
+  }
+  &__view_mebli:hover {
+      transform: translateY(-970px);
+  }
+  &__view_expoform:hover {
+      transform: translateY(-188px);
+  }
+  &__view_gotrip:hover {
+      transform: translateY(-422px);
+  }
+  &__view_candle:hover {
+      transform: translateY(-2677px);
+  }
+ 
+  &__view {
+    border-radius: 20px;
+    width: 530px;
+    overflow: hidden;
+      
+      
+    img {
+      height: auto;
+      transition: transform 10s ease-in-out 0s;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+  &__desc {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    h5 {
+      color: var(--text-color);
+      font-size: 17px;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    p {
+      color: #767676;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 120%;
+      margin-bottom: 20px;
+
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    gap: 0 40px;
+    margin-top: 20px;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-color);
+      @include hoverAnim;
+    }
+  }
+  &__stack {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    p {
+      position: relative;
+      cursor: pointer;
+      color: #2d2e32;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(3, 85, 133, 0.3);
+        border-radius: 5px;
+        transition: all 1s ease;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(184, 0, 144, 0.3);
+        border-radius: 5px;
+        transition: all 1s ease;
+      }
+      &:first-child:hover {
+        &::before {
+          width: 100%;
+        }
+     
+      }
+      &:last-child:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .portfolio__view {
+      height: 340px;
+      margin: 0 auto;
+  }
+  .portfolio__item {
+      height: auto;
+      gap: 20px 0;
+      flex-direction: column;
+  }
+  .portfolio__desc {
+    width: 440px;
+  }
+
+ 
+}
+

@@ -1,0 +1,21 @@
+.footer {
+    padding: 60px 0;
+    background-color: var(--text-color);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+            color: var(--white-color);
+            font-size: 20px;
+        }
+    }
+    &__social {
+        display: flex;
+        gap: 0 20px;
+        svg {
+            fill: var(--white-color);
+        }
+    }
+    
+}

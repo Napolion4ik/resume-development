@@ -1,0 +1,39 @@
+.contacts {
+    background: var(--white-color);
+    padding: 60px 0;
+    &__list {
+        display: flex;
+        gap: 0 20px
+    }
+    &__item {
+        @include flex;
+        gap: 0 20px;
+        &:hover {
+            .contacts__icon {
+                background-color: var(--hover-color);
+                svg {
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+    &__icon {
+        svg{
+            transition: all .2s linear;
+        }
+        transition: all .4s linear;
+        
+        background-color: var(--bg-color);
+        padding: 20px;
+        border-radius: 50%;
+    }
+    &__title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    &__link {
+        display: block;
+        color: var(--sub-color);
+     
+    }
+}

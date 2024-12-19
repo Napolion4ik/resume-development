@@ -1,0 +1,255 @@
+.container__aboutMe {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 40px
+
+}
+:root {
+     --aboutColorLight: #E6DACE;
+     --aboutCardColorLight: #F4ECE6;
+}
+body.dark {
+     --aboutColorLight: #362d24;
+     --aboutCardColorLight: #61564e;
+}
+.aboutMe {
+     display: flex;
+     position: relative;
+     
+
+     &::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          background-color: var(--aboutColorLight);
+          height: 100%;
+          width: 40%;
+     }
+     &__card {
+          text-align: center;
+          width: 375px;
+          flex-shrink: 0;
+          background-color: var(--aboutCardColorLight);
+     }
+     &__image {
+          width: 100%;
+          border-radius: 50%;
+          margin-bottom: 15px;
+     }
+     &__name {
+          font-size: 22px;
+          font-weight: bold;
+          margin-bottom: 15px;
+
+     }
+     &__card-top {
+          padding: 60px;
+     }
+     &__job {
+          font-size: 20px;
+          margin-bottom: 20px;
+          font-family: 'Mulish', sans-serif;
+          font-weight: bold;
+     }
+     &__social {
+          background-color: #f9f9f9;
+          width: 95%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 10px;
+          border-radius: 0 0 40px 40px;
+          padding: 10px 0;
+          img {
+               width: 30px;
+               aspect-ratio: 1/1;  
+          }
+     }
+     &__title {
+          font-size: 34px;
+          font-weight: bold;
+          margin-bottom: 25px;
+     }
+     &__subtitle {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 40px;
+     }
+     &__wraplink {
+          display: flex;
+          gap: 0 20px;
+          a:first-child {
+               background-color: #176697;
+               color: white;
+               border: none;
+          }
+          a:last-child {
+               border: 1px solid var(--text-color);
+               color: var(--text-color);
+          }
+          a {
+               text-transform: uppercase;
+               font-size: 14px;
+               font-weight: bold;
+               color: black;
+               padding: 10px 20px;
+               border-radius: 40px;
+          }
+          margin-bottom: 50px;
+     }
+     &__text {
+          font-size: 19px;
+          &+& {
+               margin-top: 20px;
+          }
+     }
+
+}
+
+
+
+@property --deg {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 122.12;
+}
+@property --brightness {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 1;
+}
+
+@keyframes brightness-anim1 {
+	from {
+		--brightness: 1;
+	}
+	to {
+		--brightness: 3;
+	}
+}
+
+@keyframes brightness-anim {
+	0% {
+		--brightness: 1;
+	}
+	7% {
+		--brightness: 2;
+	}
+	10% {
+		--brightness: 6;
+	}
+	27% {
+		--brightness: 2;
+	}
+	30% {
+		--brightness: 0.5;
+	}
+	35% {
+		--brightness: 2;
+	}
+	52% {
+		--brightness: 1;
+	}
+	55% {
+		--brightness: 0.8;
+	}
+	50% {
+		--brightness: 1;
+	}
+	72% {
+		--brightness: 2;
+	}
+	75% {
+		--brightness: 4;
+	}
+	80% {
+		--brightness: 2;
+	}
+	100% {
+		--brightness: 1;
+	}
+}
+
+@keyframes deg-anim {
+	from {
+		--deg: 0;
+	}
+	to {
+		--deg: 359;
+	}
+}
+
+.aboutMe__card {
+	--deg: 122.12;
+	--border-size: 1ch;
+	--border-radius: calc(4ch + var(--border-size));
+	--border-gradient: linear-gradient(
+		calc(var(--deg) * 1deg),
+		#34749d 0%,
+		#ebb316 100%
+	);
+
+	position: relative;
+	border-radius: var(--border-radius);
+	animation: calc(1s / 60 * 128) linear infinite deg-anim;
+
+	.content {
+		position: relative;
+		z-index: 100;
+	}
+
+	&:after {
+		--brightness: 2;
+		animation: calc(1s / 60 * 480) linear infinite alternate brightness-anim;
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		// z-index: -1;
+		border-radius: inherit;
+		pointer-events: none;
+
+		--bg-size: calc(100% + (2 * var(--border-size)));
+		background: var(--border-gradient) center center / var(--bg-size)
+			var(--bg-size);
+		border: var(--border-size) solid transparent;
+		mask: linear-gradient(transparent, transparent),
+			linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%));
+		mask-clip: padding-box, border-box;
+		mask-composite: intersect;
+	}
+}
+
+@media (max-width: 765px) {
+     .container__aboutMe {
+          flex-wrap: wrap-reverse;
+     }
+     .aboutMe {
+          padding: 40px 0;
+     }
+     .aboutMe__title,
+     .aboutMe__subtitle {
+          text-align: center;
+     }
+}
+@media (max-width: 370px) {
+     .aboutMe::after {
+          width: 15%;
+      }
+      .aboutMe__card {
+          width: 315px;
+      }
+}

@@ -1,0 +1,66 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+@import "./components/App.scss";
+@import "./pages/AboutSection/AboutSection.scss";
+@import "./components/Header/Header.scss";
+@import "./components/Portfolio/Portfolio.scss";
+@import "./components/Contancts/Contacts.scss";
+@import "./components/Footer/Footer.scss";
+@import "./pages/AboutMe/AboutMe.scss";
+@import "./pages/Contacts/Contacts.scss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;500;600;700&display=swap');
+
+// font-family: 'Mulish', sans-serif;
+// font-family: 'Poppins', sans-serif;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+section {
+    flex: 1 1 auto;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    transition: 0.6s;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section__title {
+    color: #147efb;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.section__subtitle {
+    color: var(--text-color);
+    font-size: 25px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
